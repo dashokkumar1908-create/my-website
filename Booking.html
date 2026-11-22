@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Book Your Car | Venky Cars Proddatur</title>
+
+<meta name="description" content="Book your car rental with Venky Cars in Proddatur. Send your booking enquiry directly through WhatsApp.">
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --dark:#101820;
+    --lime:#d5f36a;
+    --light:#f5f7f1;
+}
+
+* {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family:'DM Sans',sans-serif;
+    background:var(--light);
+    color:#17232b;
+    line-height:1.6;
+}
+
+h1,h2,h3,.logo {
+    font-family:'Outfit',sans-serif;
+}
+
+header {
+    background:var(--dark);
+    color:white;
+    padding:18px 0;
+}
+
+.container {
+    width:90%;
+    max-width:1050px;
+    margin:auto;
+}
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo {
+    font-size:26px;
+    font-weight:800;
+    color:white;
+    text-decoration:none;
+}
+
+.logo span {
+    color:var(--lime);
+}
+
+.back {
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.hero {
+    background:var(--dark);
+    color:white;
+    padding:45px 0 65px;
+}
+
+.hero h1 {
+    font-size:clamp(32px,5vw,48px);
+    margin-bottom:10px;
+}
+
+.hero p {
+    color:#bdc7cd;
+}
+
+.booking-section {
+    padding:50px 0;
+}
+
+.booking-layout {
+    display:grid;
+    grid-template-columns:0.8fr 1.4fr;
+    gap:30px;
+    align-items:start;
+}
+
+.info {
+    background:var(--dark);
+    color:white;
+    border-radius:16px;
+    padding:28px;
+}
+
+.info h2 {
+    margin-bottom:15px;
+}
+
+.info p {
+    color:#bdc7cd;
+    margin-bottom:18px;
+}
+
+.info .point {
+    color:var(--lime);
+    margin-top:12px;
+}
+
+form {
+    background:white;
+    border-radius:16px;
+    padding:28px;
+    box-shadow:0 5px 25px #10182012;
+}
+
+form h2 {
+    margin-bottom:20px;
+    font-size:27px;
+}
+
+.form-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field {
+    margin-bottom:10px;
+}
+
+.full {
+    grid-column:1/-1;
+}
+
+label {
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+input,select,textarea {
+    width:100%;
+    padding:13px;
+    border:1px solid #dce2df;
+    border-radius:8px;
+    font:inherit;
+    background:#fafbf9;
+    outline:none;
+}
+
+input:focus,select:focus,textarea:focus {
+    border-color:#8eaa32;
+}
+
+.btn {
+    display:block;
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:9px;
+    background:#25d366;
+    color:white;
+    font:inherit;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.btn:hover {
+    background:#1da851;
+}
+
+.status {
+    margin-top:15px;
+    font-size:14px;
+}
+
+.note {
+    font-size:12px;
+    color:#78848c;
+    margin-top:12px;
+}
+
+footer {
+    background:var(--dark);
+    color:#aab7bf;
+    padding:25px 0;
+    text-align:center;
+    font-size:13px;
+}
+
+@media(max-width:750px) {
+    .booking-layout {
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px) {
+    .form-grid {
+        grid-template-columns:1fr;
+    }
+
+    .full {
+        grid-column:auto;
+    }
+
+    form {
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a href="index.html" class="logo">
+VENKY <span>CARS</span>
+</a>
+
+<a href="index.html" class="back">← Back to Home</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>Book Your Car</h1>
+<p>Complete your booking enquiry and connect directly with Venky Cars on WhatsApp.</p>
+</div>
+</section>
+
+<section class="booking-section">
+<div class="container booking-layout">
+
+<div class="info">
+<h2>Let's Get You on the Road!</h2>
+
+<p>
+Tell us about your travel plans.
+Our team will help you select the right car.
+</p>
+
+<div class="point">✓ Easy Booking Enquiries</div>
+<div class="point">✓ Self-Drive Rentals</div>
+<div class="point">✓ Driver-Based Rentals</div>
+<div class="point">✓ Local Support</div>
+<div class="point">✓ WhatsApp Booking</div>
+
+<p style="margin-top:25px">
+<strong>Location:</strong><br>
+Proddatur, Kadapa District,<br>
+Andhra Pradesh, India.
+</p>
+</div>
+
+<form id="bookingForm">
+
+<h2>Booking Details</h2>
+
+<div class="form-grid">
+
+<div class="field">
+<label>Your Name *</label>
+<input
+type="text"
+name="name"
+placeholder="Enter your name"
+required>
+</div>
+
+<div class="field">
+<label>Mobile Number *</label>
+<input
+type="tel"
+name="phone"
+pattern="[0-9+ -]{10,15}"
+placeholder="Enter mobile number"
+required>
+</div>
+
+<div class="field">
+<label>Rental Type *</label>
+<select name="rental" required>
+<option value="">Select Rental Type</option>
+<option>Self Drive</option>
+<option>With Driver</option>
+</select>
+</div>
+
+<div class="field">
+<label>Car Category *</label>
+<select name="category" id="category" required>
+<option value="">Select Category</option>
+<option>Hatchback</option>
+<option>Sedan</option>
+<option>SUV</option>
+<option>Luxury</option>
+<option>Premium</option>
+<option>Family Car</option>
+</select>
+</div>
+
+<div class="field">
+<label>Select Car</label>
+<select name="carName">
+<option value="">Select Car</option>
+<option>Swift</option>
+<option>Swift Dzire</option>
+<option>Innova Crysta</option>
+<option>Thar</option>
+<option>Ertiga</option>
+<option>TATA Harrier</option>
+</select>
+</div>
+
+<div class="field">
+<label>Vehicle Location</label>
+<input
+type="text"
+name="vehicleLocation"
+value="Proddatur"
+required>
+</div>
+
+<div class="field">
+<label>Pickup Location *</label>
+<input
+type="text"
+name="pickup"
+placeholder="Enter pickup location"
+required>
+</div>
+
+<div class="field">
+<label>Destination *</label>
+<input
+type="text"
+name="destination"
+placeholder="Enter destination"
+required>
+</div>
+
+<div class="field">
+<label>Pickup Date *</label>
+<input
+type="date"
+name="date"
+id="date"
+required>
+</div>
+
+<div class="field">
+<label>Duration *</label>
+<select name="duration" required>
+<option>1 Day</option>
+<option>2 Days</option>
+<option>3 Days</option>
+<option>1 Week</option>
+<option>Custom Duration</option>
+</select>
+</div>
+
+<div class="field full">
+<label>Additional Requirements</label>
+<textarea
+name="notes"
+rows="4"
+placeholder="Any special requirements?"></textarea>
+</div>
+
+<div class="field full">
+<button type="submit" class="btn">
+Send Booking on WhatsApp →
+</button>
+
+<div id="status" class="status" role="status" aria-live="polite"></div>
+
+<p class="note">
+Your WhatsApp application will open with your booking details.
+Please press Send to submit your enquiry.
+</p>
+</div>
+
+</div>
+</form>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>© <span id="year"></span> Venky Cars. All Rights Reserved.</p>
+<p>Premium Car Rentals in Proddatur.</p>
+</div>
+</footer>
+
+<script>
+
+// ==================================
+// VENKY CARS BOOKING CONFIGURATION
+// ==================================
+
+const OWNER_WHATSAPP = "919866826416";
+
+// Read selected car from homepage URL
+const params = new URLSearchParams(window.location.search);
+const selectedCar = params.get("car");
+
+if (selectedCar) {
+    document.getElementById("category").value = selectedCar;
+}
+
+// Set minimum pickup date
+const dateInput = document.getElementById("date");
+
+const today = new Date();
+
+dateInput.min = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, "0"),
+    String(today.getDate()).padStart(2, "0")
+].join("-");
+
+// Submit booking
+document.getElementById("bookingForm").addEventListener(
+"submit", function(e) {
+
+    e.preventDefault();
+
+    const form = this;
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+
+    const booking = {
+        name: data.get("name"),
+        phone: data.get("phone"),
+        rental: data.get("rental"),
+        category: data.get("category"),
+        carName: data.get("carName") || "Not specified",
+        vehicleLocation: data.get("vehicleLocation"),
+        pickup: data.get("pickup"),
+        destination: data.get("destination"),
+        date: data.get("date"),
+        duration: data.get("duration"),
+        notes: data.get("notes") || "None"
+    };
+
+    const message =
+`🚗 NEW BOOKING ENQUIRY - VENKY CARS
+
+👤 CUSTOMER DETAILS
+
+Name: ${booking.name}
+Mobile: ${booking.phone}
+
+🚘 CAR DETAILS
+
+Rental Type: ${booking.rental}
+Car Category: ${booking.category}
+Car Name: ${booking.carName}
+
+📍 TRAVEL DETAILS
+
+Vehicle Location: ${booking.vehicleLocation}
+Pickup Location: ${booking.pickup}
+Destination: ${booking.destination}
+
+📅 PICKUP DATE
+
+${booking.date}
+
+⏳ DURATION
+
+${booking.duration}
+
+📝 ADDITIONAL REQUIREMENTS
+
+${booking.notes}
+
+Please confirm vehicle availability and pricing.
+
+Thank you!
+VENKY CARS - PRODDATUR`;
+
+    const whatsappURL =
+        "https://wa.me/" +
+        OWNER_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(message);
+
+    const whatsappWindow = window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+    if (whatsappWindow) {
+        document.getElementById("status").textContent =
+            "WhatsApp opened. Please press SEND to submit your booking enquiry.";
+    } else {
+        document.getElementById("status").innerHTML =
+            'WhatsApp popup blocked. <a href="' +
+            whatsappURL +
+            '" target="_blank" rel="noopener">Click here to send your booking</a>.';
+    }
+
+});
+
+// Footer year
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
